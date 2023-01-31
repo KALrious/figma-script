@@ -1,0 +1,15 @@
+{
+  "name": "scripts-figma",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:icons": "npm run build:icons:react && npm run build:icons:font",
+    "build:icons:react": "node scripts/generateIcons.js",
+    "build:icons:font": "svgo --folder dist/fonts/icons/svg --disable=removeViewBox --quiet && icon-font-generator dist/fonts/icons/svg/*.svg --out dist/fonts/icons --prefix oui && rimraf dist/fonts/icons/svg",
+    "build:emojis": "node scripts/generateEmojis.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
